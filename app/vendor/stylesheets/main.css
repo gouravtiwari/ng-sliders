@@ -1,0 +1,38 @@
+rzslider span.pointer:hover:after {
+  background-color: #333333;;
+}
+
+rzslider span.pointer.active:after {
+  background-color: #333333;;
+}
+
+rzslider span.bubble {
+  top: -32px;
+  padding: 1px 3px 1px 3px;
+  color: #333333;
+  cursor: default;
+}
+
+rzslider span.bubble.selection {
+  top: 15px;
+}
+
+rzslider span.bubble.limit {
+  color: #333333;;
+}
+
+.day{
+  background-color: #d3d3d3;
+  margin-left: 40px;
+  margin-right: 50px;
+  padding: 30px;
+  height: 400px;
+}
+
+.lunch{
+  position: absolute;
+  width: 50px;
+  background-color: #999999;
+  height: 400px;
+  left: 50%;
+}
