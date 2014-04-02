@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+<head>
+    <meta charset="utf-8" />
+    <title>AngularJS Slider Plunker</title>
+    <link rel="stylesheet" href="../vendor/stylesheets/rzslider.css" />
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../vendor/javascripts/rzslider.js"></script>
+</head>
+
+<body ng-controller="MainCtrl">
+
+<div style="background-color: #808080;margin-left: 40px;margin-right: 50px; padding: 30px;">
+    <pre>{{ priceSlider.model | json }}</pre>
+
+    <rzslider
+            rz-slider-model="priceSlider.model"
+            rz-slider-floor="priceSlider.floor"
+            rz-slider-ceil="priceSlider.ceil"
+            rz-slider-translate="translate"></rzslider>
+    <br/>
+
+    <pre>{{ priceSlider2 | json }}</pre>
+    <br> <br>
+    <rzslider
+            rz-slider-model="priceSlider2"
+            rz-slider-floor="priceSlider.floor"
+            rz-slider-ceil="priceSlider.ceil"
+            rz-slider-translate="translate"></rzslider>
+
+    <pre>{{ priceSlider3 | json }}</pre>
+    <br> <br>
+    <rzslider
+            rz-slider-model="priceSlider3"
+            rz-slider-floor="priceSlider.floor"
+            rz-slider-ceil="priceSlider.ceil"
+            rz-slider-translate="translate"></rzslider>
+
+    <br><br><br>
+</div>
+</body>
+
+<script>
+    var app = angular.module('plunker', ['rzModule']);
+
+    app.controller('MainCtrl', function($scope)
+    {
+        $scope.priceSlider = {
+            model: 0900,
+            floor: 0,
+            ceil: 2359
+        };
+
+        $scope.priceSlider2 = 1150;
+        $scope.priceSlider3 = 1250;
+
+        $scope.translate = function(value)
+        {
+            var time = new String("0000" + value).slice(-4).match(/.{1,2}/g);;
+            return time[0]+':'+time[1];
+        };
+    });
+</script>
+
+</html>
